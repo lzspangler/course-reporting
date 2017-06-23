@@ -3,9 +3,9 @@ package org.example.app.repository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import org.example.app.domain.CourseRecord;
+import org.example.app.domain.Course;
 
-public interface CourseRecordRepository extends MongoRepository<CourseRecord, Long> {
+public interface StudentCourseRecordRepository extends MongoRepository<Course, Long> {
 
 
 }
