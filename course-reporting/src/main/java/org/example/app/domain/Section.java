@@ -11,11 +11,11 @@ public class Section {
 
 	private String sectionName;
 
-	private boolean successfullyCompleted = false;
+	private Boolean successfullyCompleted;
 
-	private String comment;
+	private String studentComments;
 
-	private Timestamp timestamp;
+	private Timestamp lastUpdatedTime;
 
 	public long getId() {
 		return id;
@@ -33,39 +33,23 @@ public class Section {
 		this.sectionName = sectionName;
 	}
 
-	public boolean isSuccessfullyCompleted() {
+	public Boolean isSuccessfullyCompleted() {
 		return successfullyCompleted;
 	}
 
-	public void setSuccessfullyCompleted(boolean successfullyCompleted) {
+	public void setSuccessfullyCompleted(Boolean successfullyCompleted) {
 		this.successfullyCompleted = successfullyCompleted;
-	}
-
-	public String getComment() {
-		return comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
-
-	public Timestamp getTimestamp() {
-		return timestamp;
-	}
-
-	public void setTimestamp(Timestamp timestamp) {
-		this.timestamp = timestamp;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((comment == null) ? 0 : comment.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((lastUpdatedTime == null) ? 0 : lastUpdatedTime.hashCode());
 		result = prime * result + ((sectionName == null) ? 0 : sectionName.hashCode());
+		result = prime * result + ((studentComments == null) ? 0 : studentComments.hashCode());
 		result = prime * result + (successfullyCompleted ? 1231 : 1237);
-		result = prime * result + ((timestamp == null) ? 0 : timestamp.hashCode());
 		return result;
 	}
 
@@ -78,24 +62,24 @@ public class Section {
 		if (getClass() != obj.getClass())
 			return false;
 		Section other = (Section) obj;
-		if (comment == null) {
-			if (other.comment != null)
-				return false;
-		} else if (!comment.equals(other.comment))
-			return false;
 		if (id != other.id)
+			return false;
+		if (lastUpdatedTime == null) {
+			if (other.lastUpdatedTime != null)
+				return false;
+		} else if (!lastUpdatedTime.equals(other.lastUpdatedTime))
 			return false;
 		if (sectionName == null) {
 			if (other.sectionName != null)
 				return false;
 		} else if (!sectionName.equals(other.sectionName))
 			return false;
-		if (successfullyCompleted != other.successfullyCompleted)
-			return false;
-		if (timestamp == null) {
-			if (other.timestamp != null)
+		if (studentComments == null) {
+			if (other.studentComments != null)
 				return false;
-		} else if (!timestamp.equals(other.timestamp))
+		} else if (!studentComments.equals(other.studentComments))
+			return false;
+		if (successfullyCompleted != other.successfullyCompleted)
 			return false;
 		return true;
 	}
@@ -103,7 +87,7 @@ public class Section {
 	@Override
 	public String toString() {
 		return "Section [id=" + id + ", sectionName=" + sectionName + ", successfullyCompleted=" + successfullyCompleted
-				+ ", comment=" + comment + ", timestamp=" + timestamp + "]";
+				+ ", studentComments=" + studentComments + ", lastUpdatedTime=" + lastUpdatedTime + "]";
 	}
 
 }

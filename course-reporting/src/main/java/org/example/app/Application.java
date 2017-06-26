@@ -13,6 +13,10 @@ public class Application implements CommandLineRunner {
 
 	public void run(String... arg0) throws Exception {
 
+		while (true) {
+			Thread.sleep(5000);
+			System.out.println("Hello app is running");
+		}
 	}
 
 }

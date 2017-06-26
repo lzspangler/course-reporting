@@ -14,6 +14,8 @@ public class Course {
 
 	private String courseName;
 
+	private String version;
+
 	private List<Lab> labs = new ArrayList<Lab>();
 
 	public long getId() {
@@ -32,6 +34,14 @@ public class Course {
 		this.courseName = courseName;
 	}
 
+	public String getVersion() {
+		return version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
 	public List<Lab> getLabs() {
 		return labs;
 	}
@@ -47,6 +57,7 @@ public class Course {
 		result = prime * result + ((courseName == null) ? 0 : courseName.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + ((labs == null) ? 0 : labs.hashCode());
+		result = prime * result + ((version == null) ? 0 : version.hashCode());
 		return result;
 	}
 
@@ -71,12 +82,17 @@ public class Course {
 				return false;
 		} else if (!labs.equals(other.labs))
 			return false;
+		if (version == null) {
+			if (other.version != null)
+				return false;
+		} else if (!version.equals(other.version))
+			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Course [id=" + id + ", courseName=" + courseName + ", labs=" + labs + "]";
+		return "Course [id=" + id + ", courseName=" + courseName + ", version=" + version + ", labs=" + labs + "]";
 	}
 
 }
