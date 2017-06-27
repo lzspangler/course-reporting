@@ -30,11 +30,12 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<!--  
                 <dependency>
                         <groupId>org.example.app</groupId>
                         <artifactId>course-domain</artifactId>
                         <version>1.0-SNAPSHOT</version>
-                </dependency>
+                </dependency> -->
 	</dependencies>
 
 	<properties>
