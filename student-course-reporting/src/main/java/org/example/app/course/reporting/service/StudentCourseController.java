@@ -11,7 +11,7 @@ public class StudentCourseController {
 	@RequestMapping(value = "/student-course-reports", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public String createUpdateCourses() {
-		return ("Hello course reporting service");
+		return ("Hello student course reporting service");
 	}
 
 }
